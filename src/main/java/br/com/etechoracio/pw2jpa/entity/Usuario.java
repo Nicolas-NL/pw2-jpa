@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.entity;
+package br.com.etechoracio.pw2jpa.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,28 +13,30 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Setter	
 @Getter
+@Builder
 @Table(name="TBL_USUARIO")
 public class Usuario {
     
 	@Id
 	@Column(name = "ID_USUARIO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 	
 	@Column (name = "TX_NOME")
-	private String Nome;
+	private String nome;
 	
 	@Column (name = "TX_SENHA")
-	private String Senha;
+	private String senha;
 	
 	@Column (name = "DT_INATIVACAO")
-	private LocalDateTime DataInativacao;
+	private LocalDateTime dataInativacao;
 	
 	
 	@ManyToMany

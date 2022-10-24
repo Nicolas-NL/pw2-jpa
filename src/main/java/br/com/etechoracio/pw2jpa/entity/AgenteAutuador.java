@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.entity;
+package br.com.etechoracio.pw2jpa.entity;
 
 
 import javax.persistence.Column;
@@ -10,8 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.etechoracio.jpa.enums.StatusAgenteEnum;
-import br.com.etechoracio.jpa.enums.TipoAgenteEnum;
+import br.com.etechoracio.pw2jpa.enums.StatusAgenteEnum;
+import br.com.etechoracio.pw2jpa.enums.TipoAgenteEnum;
 
 
 @Entity
@@ -29,7 +29,10 @@ public class AgenteAutuador {
 	@Column(name="TP_AGENTE")
 	private TipoAgenteEnum Tipo;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name="ST_AGENTE")
 	private StatusAgenteEnum status; 
+	
+	@Column(name="TX_FONE")
+	private String fone;
 }

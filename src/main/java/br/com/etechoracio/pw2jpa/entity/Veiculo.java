@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.entity;
+package br.com.etechoracio.pw2jpa.entity;
 
 import java.util.List;
 
@@ -8,7 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -18,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@Table(name = "TBL_Veiculo")
+@Table(name = "TBL_VEICULO")
 public class Veiculo {
     @Id
     @Column(name = "ID_VEICULO")
@@ -41,10 +44,10 @@ public class Veiculo {
 	private double valor;
     
     @JoinColumn(name="ID_PROPRIETARIO")
-    @ManyToOne
+    @OneToOne
     private Proprietario proprietario;
 	
-    
-    @ManyToOne
+    @JoinTable(name = "TBL_REL_VEICULO_ACESSORIO",joinColumns = {@JoinColumn(name = "ID_VEICULO")}, inverseJoinColumns = {@JoinColumn(name = "ID_ACESSORIO")})
+    @ManyToMany
     private List<Acessorio> acessorios;
 }

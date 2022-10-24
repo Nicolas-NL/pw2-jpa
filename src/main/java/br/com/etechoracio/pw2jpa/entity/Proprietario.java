@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.entity;
+package br.com.etechoracio.pw2jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import br.com.etechoracio.jpa.enums.TipoPessoaEnum;
+import br.com.etechoracio.pw2jpa.enums.TipoPessoaEnum;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,16 +1,20 @@
 package br.com.etechoracio.pw2jpa;
 
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.etechoracio.jpa.entity.Usuario;
-import br.com.etechoracio.jpa.entity.UsuarioRepository;
+import br.com.etechoracio.pw2jpa.entity.Usuario;
+import br.com.etechoracio.pw2jpa.repository.UsuarioRepository;
 
 @SpringBootApplication
 public class Pw2JpaApplication implements CommandLineRunner{
 
-	private UsuarioRepository repo;
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 	
 
 	public static void main(String[] args) {
@@ -18,8 +22,12 @@ public class Pw2JpaApplication implements CommandLineRunner{
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		Usuario us = new Usuario();
-		repo.save(us);
+		Usuario us = Usuario.builder().nome("horacio.augusto").senha("etec123").build();
+		usuarioRepository.save(us);
+		
+		
+		
 	}
 
 }
+	

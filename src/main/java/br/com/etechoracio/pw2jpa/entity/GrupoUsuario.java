@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.entity;
+package br.com.etechoracio.pw2jpa.entity;
 
 import java.time.LocalDateTime;
 

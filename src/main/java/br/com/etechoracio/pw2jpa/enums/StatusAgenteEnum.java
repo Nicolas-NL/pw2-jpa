@@ -1,4 +1,4 @@
-package br.com.etechoracio.jpa.enums;
+package br.com.etechoracio.pw2jpa.enums;
 
 public enum StatusAgenteEnum {
 	ATIVO,
